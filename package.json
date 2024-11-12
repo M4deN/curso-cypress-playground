@@ -11,5 +11,11 @@
     "Talking About Testing"
   ],
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "curso-cypress-playground": "file:"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.3"
+  }
 }
