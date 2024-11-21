@@ -1,4 +1,4 @@
-name: End-to-end tests-Paralelism-CI
+name: End-to-end tests-Playground
 on: push
 jobs:
   cypress-run:
