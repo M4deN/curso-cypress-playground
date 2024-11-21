@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Repositório do curso Cypress Playground da Escola Talking About Testing.",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress run --reporter nyan",
+    "cy:open": "cypress open"
   },
   "keywords": [
     "Cypress Playground",
