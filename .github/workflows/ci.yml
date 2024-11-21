@@ -1,4 +1,4 @@
-name: End-to-end tests-Playground
+name: End-to-end tests-Playground 🧪
 on: push
 jobs:
   cypress-run:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Run split Cypress tests 🧪
+      - name: Run Split Cypress Tests 🧪
         uses: cypress-io/github-action@v6
         # pass the machine index and the total number
         env:
