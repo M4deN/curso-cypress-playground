@@ -41,8 +41,8 @@ describe('Cypress Playground Tests', () => {
     cy.get('#on-off').should('be.visible','ON ').should('be.visible')
   })
 
-  it('Test Select All Options ',()=>{
-    /*My Resoluton*/
+  it('Test Select All Options and verify the assertions',()=>{
+   
     cy.contains('p',"You haven't selected a type yet.").should('be.visible')
     cy.get('#selection-type').select('Basic')
     cy.get('#select-selection').should('have.text',"You've selected: BASIC")
@@ -57,5 +57,12 @@ describe('Cypress Playground Tests', () => {
     cy.contains('#select-selection','BASIC').should('be.visible')
     cy.get('#selection-type').select('Standard')
     cy.contains('#select-selection','STANDARD').should('be.visible')
+  })
+
+  it('Test Multiple Select All Options and verify the assertions',()=>{
+    
+    cy.contains('p',"You haven't selected any fruit yet.").should('be.visible')
+    cy.get('#fruit').select(['apple','banana','cherry'])
+    cy.contains('p',"You've selected the following fruits: apple, banana, cherry").should('be.visible')
   })
 })
