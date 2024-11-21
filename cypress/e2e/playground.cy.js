@@ -26,8 +26,7 @@ describe('Cypress Playground Tests', () => {
     cy.get('#signature-checkbox').uncheck()
     cy.contains('#signature-triggered-by-check','Leandro A. Medeiros Sign New').should('not.exist')
   })
-
-  it.only('Check both possible Radios and asserts if it is "on"  or "off" ',()=>{
+  it('Check both possible Radios and asserts if it is "on"  or "off" ',()=>{
     cy.get('#on-off').should('have.text','ON')
     cy.contains('#off').should('not.exist')
     cy.get('#off').check()
@@ -40,5 +39,23 @@ describe('Cypress Playground Tests', () => {
     cy.get('input[type="radio"][value="on"]').check()
     cy.get('#on-off').should('have.text','ON')
     cy.get('#on-off').should('be.visible','ON ').should('be.visible')
+  })
+
+  it.only('Test Select All Options ',()=>{
+    /*My Resoluton*/
+    cy.contains('p',"You haven't selected a type yet.").should('be.visible')
+    cy.get('#selection-type').select('Basic')
+    cy.get('#select-selection').should('have.text',"You've selected: BASIC")
+    cy.get('#selection-type').select('Standard')
+    cy.get('#select-selection').should('have.text',"You've selected: STANDARD")
+    cy.get('#selection-type').select('VIP')
+    cy.get('#select-selection').should('have.text',"You've selected: VIP")
+
+    cy.get('#selection-type').select('VIP')
+    cy.contains('#select-selection','VIP').should('be.visible')
+    cy.get('#selection-type').select('Basic')
+    cy.contains('#select-selection','BASIC').should('be.visible')
+    cy.get('#selection-type').select('Standard')
+    cy.contains('#select-selection','STANDARD').should('be.visible')
   })
 })
