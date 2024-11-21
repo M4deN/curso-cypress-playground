@@ -1,12 +1,20 @@
-# run 3 copies of the current job in parallel
-strategy:
-    fail-fast: false
-    matrix:
-      containers: [1, 2, 3]
-  steps:
-    - name: Run split Cypress tests 🧪
-      uses: cypress-io/github-action@v6
-      # pass the machine index and the total number
-      env:
-        SPLIT: ${{ strategy.job-total }}
-        SPLIT_INDEX: ${{ strategy.job-index }}
+name: End-to-end tests-Paralelism-CI
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+   
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run split Cypress tests 🧪
+        uses: cypress-io/github-action@v6
+        # pass the machine index and the total number
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
