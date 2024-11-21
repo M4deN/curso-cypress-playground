@@ -41,7 +41,7 @@ describe('Cypress Playground Tests', () => {
     cy.get('#on-off').should('be.visible','ON ').should('be.visible')
   })
 
-  it.only('Test Select All Options ',()=>{
+  it('Test Select All Options ',()=>{
     /*My Resoluton*/
     cy.contains('p',"You haven't selected a type yet.").should('be.visible')
     cy.get('#selection-type').select('Basic')
