@@ -59,10 +59,14 @@ describe('Cypress Playground Tests', () => {
     cy.contains('#select-selection','STANDARD').should('be.visible')
   })
 
-  it('Test Multiple Select All Options and verify the assertions',()=>{
-    
+  it('Test Multiple Select All Options and verify the assertions',()=>{    
     cy.contains('p',"You haven't selected any fruit yet.").should('be.visible')
     cy.get('#fruit').select(['apple','banana','cherry'])
     cy.contains('p',"You've selected the following fruits: apple, banana, cherry").should('be.visible')
+  })
+  
+  it('Testing file upload and assertion',()=>{
+    cy.get('input[type="file"]').selectFile('./cypress/fixtures/example.json')
+    cy.contains('p','The following file has been selected for upload: example.json').should('be.visible')
   })
 })
