@@ -1,4 +1,4 @@
-name: End-to-end tests-Playground 🧪
+name: End-to-end tests Cypress Playground TAT🧪
 on: push
 jobs:
   cypress-run:
@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3, 4, 5]
+        containers: [1, 2, 3]
         
     steps:
       - name: Checkout
