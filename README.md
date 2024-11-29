@@ -1,5 +1,5 @@
 # 🌲 Cypress Playground 🛝
-
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/M4deN/curso-cypress-playground/ci.yml?label=Test%20Workflows&logo=Cypress&style=for-the-badge)
 👋 Seja bem-vindo(a)!
 
 É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
